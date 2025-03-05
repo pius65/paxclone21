@@ -146,7 +146,7 @@
         }
 
         .forgot-password a {
-            color: var (--text-secondary);
+            color: var(--text-secondary);
             text-decoration: underline;
         }
 
@@ -172,8 +172,9 @@
             display: none;
             flex-grow: 1;
             width: 50%;
-            background: url('static/images/Screenshot 2025-03-04 182035.png') no-repeat center center;
-            background-size: cover;
+            /* Updated background image path and fitting */
+            background: url('../_next/static/media/Screenshot 2025-03-04 182035.png') no-repeat center center;
+            background-size: cover; /* Ensures the image fits the section */
             overflow: hidden;
             position: relative;
         }
@@ -185,8 +186,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('static/images/Screenshot 2025-03-04 182035.png') no-repeat center center;
-            background-size: cover;
+            background: url('../_next/static/media/Screenshot 2025-03-04 182035.png') no-repeat center center;
+            background-size: cover; /* Ensures the image fits */
             z-index: 1;
         }
 
@@ -201,7 +202,7 @@
             }
 
             .background-section {
-                display: block;
+                display: block; /* Shows the background section on larger screens */
             }
         }
 
